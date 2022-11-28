@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Chair",
+    "price": 89.99,
+    "imgUrl": "/imgs/chair.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Table",
+    "price": 59.99,
+    "imgUrl": "/imgs/table.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Flower pot",
+    "price": 39.99,
+    "imgUrl": "/imgs/flowerpot.png"
+  },
+  {
+    "id": 4,
+    "name": "Pool",
+    "price": 69.99,
+    "imgUrl": "/imgs/pool.jpg"
+  }
+]
