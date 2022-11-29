@@ -1,16 +1,84 @@
-import { Routes, Route } from 'react-router-dom';
-import { Checkout } from './pages/Checkout';
-import { Products } from './pages/Products';
+import React, { useState, useContext, useEffect } from 'react';
+import { FaIdeal, FaCcMastercard, FaCcVisa, FaCcPaypal } from 'react-icons/fa';
+import GlobalStyles from './GlobalStyles';
+import {
+  NavBar,
+  OverLay,
+  MainContainer,
+  ProductList,
+  Footer,
+  Body,
+} from './AppStyles';
 
-function App() {
+import Context from './store/Context';
+import Cart from './components/Cart';
+import Product from './components/Product';
+
+export default function App() {
+  const [isToggle, setToggle] = useState(false);
+  const context = useContext(Context);
+
+  useEffect(() => {
+    console.log(context);
+  }, [context]);
+
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Products />}></Route>
-        <Route path="/checkout" element={<Checkout />}></Route>
-      </Routes>
+      <GlobalStyles />
+      <Body>
+        <NavBar>
+          <Cart
+            isToggle={isToggle}
+            setToggle={setToggle}
+            carts={context.carts}
+            removeProductFromCart={context.removeProductFromCart}
+            clearCart={context.clearCart}
+          />
+        </NavBar>
+
+        <MainContainer>
+          {isToggle && <OverLay />}
+          <ProductList onClick={() => setToggle(true)}>
+            {context.products.map((p) => (
+              <Product
+                key={p.id}
+                id={p.id}
+                imageURL={p.imageURL}
+                price={p.price}
+                title={p.title}
+                addProductToCart={context.addProductToCart}
+              />
+            ))}
+          </ProductList>
+        </MainContainer>
+
+        <Footer>
+          <div className="footer-wrapper">
+            <div className="footer-items">
+              <h5>Terms & Conditions</h5>
+              <h5>Privacy Policy</h5>
+              <h5>Other Policies</h5>
+            </div>
+            <div className="footer-items">
+              <h1>
+                <FaIdeal />
+              </h1>
+              <h1>
+                <FaCcMastercard />
+              </h1>
+              <h1>
+                <FaCcVisa />
+              </h1>
+              <h1>
+                <FaCcPaypal />
+              </h1>
+            </div>
+            <div className="footer-items">
+              <h5>Copyright © 2010 - 2022 Tuinexpress.nl</h5>
+            </div>
+          </div>
+        </Footer>
+      </Body>
     </>
   );
 }
-
-export default App;
