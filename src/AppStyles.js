@@ -14,7 +14,7 @@ export const NavBar = styled.div`
   padding: 20px 50px;
   background: #ffffff;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   position: relative;
   border-bottom: 2px solid rgb(0, 0, 0, 0.05);
 `;

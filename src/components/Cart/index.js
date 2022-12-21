@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
-
+import '../Product/font/DMSans-Regular.ttf';
 import {
   Wrapper,
   Icon,
@@ -68,7 +68,9 @@ export default function Cart({
         )}
 
         {carts.length !== 0 && (
-          <CheckoutButton>Checkout Securely</CheckoutButton>
+          <Link to="/checkout" as={Link}>
+            <CheckoutButton>Checkout Securely</CheckoutButton>
+          </Link>
         )}
       </CartSideBar>
     </>

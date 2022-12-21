@@ -22,7 +22,7 @@ export const CartCount = styled.span`
   border-radius: 50px;
   background: #2bb48c;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: 600;
 `;
 
