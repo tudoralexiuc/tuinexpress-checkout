@@ -56,6 +56,8 @@
   cursor: pointer;
 }
 
+/* Checkout page */
+
 .backButton {
   font-family: 'DMSansMedium';
   width: 90px;
@@ -73,4 +75,140 @@
   cursor: pointer;
   color: white;
   outline: none;
+}
+
+.checkout-container {
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping-field {
+  border: 1px solid rgb(224, 224, 224);
+  width: 700px;
+  padding: 2rem;
+}
+
+.green-circle {
+  height: 30px;
+  width: 30px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delivery-field {
+  margin-top: 5rem;
+  border: 1px solid rgb(224, 224, 224);
+  width: 700px;
+  padding: 2rem;
+}
+
+.delivery-content {
+  display: flex;
+}
+
+.delivery-content h6 {
+  padding-left: 1rem;
+}
+
+.delivery-content .delivery-date {
+  color: green;
+}
+
+.payment-field {
+  margin-top: 5rem;
+  border: 1px solid rgb(224, 224, 224);
+  width: 700px;
+  padding: 2rem;
+}
+
+.right-fields {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  width: 800px;
+}
+
+.order-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  padding: 1rem;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  padding: 1rem;
+}
+
+.items-container {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.chair-image {
+  width: 100px;
+}
+
+.promo-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  padding: 1rem;
+}
+
+.price-container {
+  padding: 1rem;
+}
+
+.price-container div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-container div:nth-child(1) {
+  margin-bottom: -2rem;
+  opacity: 80%;
+}
+
+.price-container div:nth-child(2) {
+  margin-bottom: -2rem;
+  opacity: 80%;
+}
+
+.price-container div:nth-child(3) {
+  opacity: 80%;
+}
+
+.button-order {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(83, 83, 83);
+  color: white;
+  border: none;
 }

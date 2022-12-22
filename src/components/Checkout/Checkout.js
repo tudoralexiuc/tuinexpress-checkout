@@ -3,6 +3,7 @@ import GlobalStyles from '../../GlobalStyles';
 import { Link } from 'react-router-dom';
 import { Body, Footer, NavBar } from '../../AppStyles';
 import Logo from '../Product/logo/logo.svg';
+import chair from '../Product/image/chair.jpg';
 
 export function Checkout() {
   return (
@@ -19,6 +20,95 @@ export function Checkout() {
             <div className="backButton">Back</div>
           </Link>
         </NavBar>
+        <div className="checkout-container">
+          <div className="left-fields">
+            <div className="shipping-field">
+              <div className="top-content">
+                <div className="green-circle">1</div>
+                <h2>SHIPPING</h2>
+              </div>
+              <div className="bottom-content">
+                <h6>Add Shipping Address</h6>
+                <div className="green-circle">></div>
+              </div>
+            </div>
+            <div className="delivery-field">
+              <div className="top-content">
+                <div className="green-circle">2</div>
+                <h2>DELIVERY</h2>
+              </div>
+              <div className="bottom-content">
+                <div className="delivery-content">
+                  <input type="radio" value="delivery" name="gender" />
+                  <div>
+                    <h6 className="delivery-date">Tue 15 Nov</h6>
+                    <h6>€7.99 DPD Economy Service</h6>
+                  </div>
+                </div>
+                <div className="green-circle">></div>
+              </div>
+              <div className="bottom-content">
+                <div className="delivery-content">
+                  <input type="radio" value="delivery" name="gender" />
+                  <div>
+                    <h6 className="delivery-date">Mon 14 Nov - Tue 15 Nov</h6>
+                    <h6>€13.99 FedEx Priority Service</h6>
+                  </div>
+                </div>
+                <div className="green-circle">></div>
+              </div>
+            </div>
+            <div className="payment-field">
+              <div className="top-content">
+                <div className="green-circle">3</div>
+                <h2>PAYMENT</h2>
+              </div>
+              <div className="bottom-content">
+                <h6>Add New Payment Card</h6>
+                <div className="green-circle">></div>
+              </div>
+            </div>
+          </div>
+          <div className="right-fields">
+            <div className="order-container">
+              <h2>ORDER SUMMARY</h2>
+              <h6>1 item</h6>
+            </div>
+            <div className="item-container">
+              <div className="items-container">
+                <img src={chair} className="chair-image" />
+                <div>
+                  <h6>Chair</h6>
+                  <h6>Quantity 1</h6>
+                </div>
+              </div>
+              <h6>€79.00</h6>
+            </div>
+            <div className="promo-container">
+              <h5>Add Gift Card / Promo code</h5>
+              <h5>></h5>
+            </div>
+            <div className="price-container">
+              <div>
+                <h5>Subtotal:</h5>
+                <h5>€79.00</h5>
+              </div>
+              <div>
+                <h5>Shipping:</h5>
+                <h5>€7.99</h5>
+              </div>
+              <div>
+                <h5>Tax:</h5>
+                <h5>€9.99</h5>
+              </div>
+              <div>
+                <h5>Total:</h5>
+                <h5>€96.98</h5>
+              </div>
+              <button className="button-order">PLACE ORDER</button>
+            </div>
+          </div>
+        </div>
         <Footer>
           <div className="footer-wrapper">
             <div className="footer-items">

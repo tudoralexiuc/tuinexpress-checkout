@@ -4,7 +4,7 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 130vh;
   @media (max-width: 768px) {
     height: auto;
   }
