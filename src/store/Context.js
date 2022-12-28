@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 export default createContext({
   products: [],
@@ -6,4 +6,5 @@ export default createContext({
   addProductToCart: (product) => {},
   removeProductFromCart: (productID) => {},
   clearCart: () => {},
+  address: {},
 });

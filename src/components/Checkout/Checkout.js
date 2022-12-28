@@ -4,8 +4,17 @@ import { Link } from 'react-router-dom';
 import { Body, Footer, NavBar } from '../../AppStyles';
 import Logo from '../Product/logo/logo.svg';
 import chair from '../Product/image/chair.jpg';
+import React, { useState, useContext, useEffect } from 'react';
+import { ShippingSection } from './ShippingSection';
 
 export function Checkout() {
+  const [infoSection, setInfoSection] = useState(false);
+
+  const handleInfo = (event) => {
+    let newValue = !infoSection;
+    setInfoSection(newValue);
+  };
+
   return (
     <>
       <GlobalStyles />
@@ -27,9 +36,17 @@ export function Checkout() {
                 <div className="green-circle">1</div>
                 <h2>SHIPPING</h2>
               </div>
-              <div className="bottom-content">
-                <h6>Add Shipping Address</h6>
-                <div className="green-circle">></div>
+              <div>
+                {infoSection ? (
+                  <ShippingSection />
+                ) : (
+                  <div className="bottom-content">
+                    <h5>Add Shipping Address</h5>
+                    <div className="green-circle" onClick={handleInfo}>
+                      >
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="delivery-field">
@@ -41,8 +58,8 @@ export function Checkout() {
                 <div className="delivery-content">
                   <input type="radio" value="delivery" name="gender" />
                   <div>
-                    <h6 className="delivery-date">Tue 15 Nov</h6>
-                    <h6>€7.99 DPD Economy Service</h6>
+                    <h5 className="delivery-date">Tue 15 Nov</h5>
+                    <h5>€7.99 DPD Economy Service</h5>
                   </div>
                 </div>
                 <div className="green-circle">></div>
@@ -51,8 +68,8 @@ export function Checkout() {
                 <div className="delivery-content">
                   <input type="radio" value="delivery" name="gender" />
                   <div>
-                    <h6 className="delivery-date">Mon 14 Nov - Tue 15 Nov</h6>
-                    <h6>€13.99 FedEx Priority Service</h6>
+                    <h5 className="delivery-date">Mon 14 Nov - Tue 15 Nov</h5>
+                    <h5>€13.99 FedEx Priority Service</h5>
                   </div>
                 </div>
                 <div className="green-circle">></div>
@@ -64,7 +81,7 @@ export function Checkout() {
                 <h2>PAYMENT</h2>
               </div>
               <div className="bottom-content">
-                <h6>Add New Payment Card</h6>
+                <h5>Add New Payment Card</h5>
                 <div className="green-circle">></div>
               </div>
             </div>
