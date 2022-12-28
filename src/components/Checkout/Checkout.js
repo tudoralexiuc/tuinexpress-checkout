@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Body, Footer, NavBar } from '../../AppStyles';
 import Logo from '../Product/logo/logo.svg';
 import chair from '../Product/image/chair.jpg';
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ShippingSection } from './ShippingSection';
 
 export function Checkout() {

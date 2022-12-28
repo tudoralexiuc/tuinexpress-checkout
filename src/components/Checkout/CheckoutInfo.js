@@ -1,6 +1,4 @@
-export const info = getInfo();
-
-function getInfo() {
+export function getInfo() {
   const saved = localStorage.getItem('checkout');
   let initialValue = {};
   try {
@@ -12,5 +10,6 @@ function getInfo() {
     initialValue = {};
   }
 
+  console.log(initialValue.firstName);
   return initialValue;
 }
