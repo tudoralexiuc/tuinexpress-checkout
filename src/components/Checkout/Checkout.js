@@ -6,6 +6,7 @@ import Logo from '../Product/logo/logo.svg';
 import chair from '../Product/image/chair.jpg';
 import React, { useState } from 'react';
 import { ShippingSection } from './ShippingSection';
+import PaymentSection from './PaymentSection';
 
 export function Checkout() {
   const [infoSection, setInfoSection] = useState(false);
@@ -13,6 +14,13 @@ export function Checkout() {
   const handleInfo = (event) => {
     let newValue = !infoSection;
     setInfoSection(newValue);
+  };
+
+  const [infoPayment, setInfoPayment] = useState(false);
+
+  const handlePayment = (event) => {
+    let newValue = !infoPayment;
+    setInfoPayment(newValue);
   };
 
   return (
@@ -62,7 +70,6 @@ export function Checkout() {
                     <h5>€7.99 DPD Economy Service</h5>
                   </div>
                 </div>
-                <div className="green-circle">></div>
               </div>
               <div className="bottom-content">
                 <div className="delivery-content">
@@ -72,7 +79,6 @@ export function Checkout() {
                     <h5>€13.99 FedEx Priority Service</h5>
                   </div>
                 </div>
-                <div className="green-circle">></div>
               </div>
             </div>
             <div className="payment-field">
@@ -80,10 +86,16 @@ export function Checkout() {
                 <div className="green-circle">3</div>
                 <h2>PAYMENT</h2>
               </div>
-              <div className="bottom-content">
-                <h5>Add New Payment Card</h5>
-                <div className="green-circle">></div>
-              </div>
+              {infoPayment ? (
+                <PaymentSection />
+              ) : (
+                <div className="bottom-content">
+                  <h5>Add New Payment Card</h5>
+                  <div className="green-circle" onClick={handlePayment}>
+                    >
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="right-fields">

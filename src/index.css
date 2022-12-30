@@ -62,9 +62,10 @@
   font-family: 'DMSansMedium';
   width: 90px;
   height: 25px;
-  padding-top: 5px;
   outline: 2px solid rgb(0, 0, 0, 0.05);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: rgb(0, 0, 0, 0.5);
   text-decoration: none;
   font-size: 14px;
@@ -283,4 +284,29 @@ select:focus {
 .shippingButtons button:nth-child(2) {
   background-color: #2bb48c;
   color: white;
+}
+
+.saved-info-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-info-section {
+  color: rgb(0, 0, 0);
+  font-family: 'DMSansRegular';
+}
+
+.right-info-section button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'DMSansBold';
+  color: grey;
+}
+
+.payment-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

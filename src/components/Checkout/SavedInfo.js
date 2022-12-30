@@ -17,15 +17,19 @@ export function SavedInfo() {
       {changePressed ? (
         <ShippingSection />
       ) : (
-        <div>
-          <h1>{information.firstName}</h1>
-          <h1>{information.lastName}</h1>
-          <h1>{information.number}</h1>
-          <h1>{information.addresss}</h1>
-          <h1>{information.country}</h1>
-          <h1>{information.town}</h1>
-          <h1>{information.postcode}</h1>
-          <button onClick={handleChangeButton}>Change</button>
+        <div className="saved-info-section">
+          <div className="left-info-section">
+            <h5>{information.firstName}</h5>
+            <h5>{information.lastName}</h5>
+            <h5>{information.number}</h5>
+            <h5>{information.addresss}</h5>
+            <h5>{information.country}</h5>
+            <h5>{information.town}</h5>
+            <h5>{information.postcode}</h5>
+          </div>
+          <div className="right-info-section">
+            <button onClick={handleChangeButton}>Change</button>
+          </div>
         </div>
       )}
     </div>
