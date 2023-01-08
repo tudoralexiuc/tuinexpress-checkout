@@ -118,6 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 2rem;
 }
 
 .delivery-field {
@@ -131,8 +132,9 @@
   display: flex;
 }
 
-.delivery-content h6 {
+.delivery-content h5 {
   padding-left: 1rem;
+  padding: 0.5rem;
 }
 
 .delivery-content .delivery-date {
@@ -173,6 +175,12 @@
   width: 180px;
 }
 
+.items-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .chair-image {
   width: 100px;
 }
@@ -191,15 +199,14 @@
 .price-container div {
   display: flex;
   justify-content: space-between;
+  padding-top: 1rem;
 }
 
 .price-container div:nth-child(1) {
-  margin-bottom: -2rem;
   opacity: 80%;
 }
 
 .price-container div:nth-child(2) {
-  margin-bottom: -2rem;
   opacity: 80%;
 }
 
@@ -213,6 +220,7 @@
   background-color: rgb(83, 83, 83);
   color: white;
   border: none;
+  margin-top: 1rem;
 }
 
 /* shipping info */
