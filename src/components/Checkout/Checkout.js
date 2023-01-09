@@ -10,12 +10,16 @@ import PaymentSection from './PaymentSection';
 
 export function Checkout() {
   const [infoSection, setInfoSection] = useState(false);
+  const [paymentInputted, setPaymentInputted] = useState(false);
 
   const handleInfo = (event) => {
     let newValue = !infoSection;
     setInfoSection(newValue);
   };
 
+  const handlePaymentInputted = (event) => {
+    setPaymentInputted(true);
+  };
   const [infoPayment, setInfoPayment] = useState(false);
 
   const handlePayment = (event) => {
@@ -87,7 +91,7 @@ export function Checkout() {
                 <h2>PAYMENT</h2>
               </div>
               {infoPayment ? (
-                <PaymentSection />
+                <PaymentSection handlePayment={handlePaymentInputted} />
               ) : (
                 <div className="bottom-content">
                   <h5>Add New Payment Card</h5>
@@ -134,7 +138,11 @@ export function Checkout() {
                 <h5>Total:</h5>
                 <h5>€96.98</h5>
               </div>
-              <button className="button-order">PLACE ORDER</button>
+              {paymentInputted ? (
+                <button className="button-order2">PLACE ORDER</button>
+              ) : (
+                <button className="button-order">PLACE ORDER</button>
+              )}
             </div>
           </div>
         </div>

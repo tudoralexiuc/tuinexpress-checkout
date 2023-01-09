@@ -318,3 +318,33 @@ select:focus {
   align-items: center;
   justify-content: space-between;
 }
+
+.masterCard-Payment {
+}
+
+.masterCard-Fields {
+  padding-top: 2rem;
+}
+
+.masterCard-Fieldss {
+  width: 120px;
+  height: 25px;
+  font-size: 0.9rem;
+  border-radius: 0.2rem;
+  color: white;
+  margin-top: 2rem;
+  background-color: #2bb48c;
+}
+
+.masterCard-Fieldss:hover {
+  background-color: rgb(1, 73, 1);
+}
+
+.button-order2 {
+  width: 200px;
+  height: 40px;
+  background-color: #2bb48c;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+}
