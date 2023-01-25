@@ -22,92 +22,100 @@ export default function PaymentSection(props) {
   };
   return (
     <div>
-      <div className="payment-container">
+      {masterCardPressed && displayPayment ? (
         <div>
-          <input type="radio" value="payment" name="payment" /> IDEAL
+          {cardHolder}
+          {cardNumber}
         </div>
-        <div>
-          <h1>
-            <FaIdeal />
-          </h1>
-        </div>
-      </div>
-      <div className="payment-container">
-        <div>
-          <input
-            type="radio"
-            value="payment"
-            name="payment"
-            onClick={handleMasterCard}
-          />
-          MasterCard
-        </div>
-        <div>
-          <h1>
-            <FaCcMastercard />
-          </h1>
+      ) : (
+        <h1></h1>
+      )}
+      <div>
+        {!displayPayment ? (
           <div>
-            {masterCardPressed && !displayPayment ? (
-              <div className="masterCard-Payment">
-                <div className="masterCard-Fields">
-                  <label>CARD HOLDER</label>
-                  <input
-                    type="text"
-                    name="cardHolder"
-                    onChange={handleCardHolder}
-                  />
-                </div>
-                <div className="masterCard-Fields">
-                  <label>CARD NUMBER*</label>
-                  <input
-                    type="text"
-                    name="cardNumber"
-                    onChange={handleCardNumber}
-                  />
-                </div>
-                <button
-                  onClick={() => {
-                    props.handlePayment();
-                    handleLocalPayment();
-                  }}
-                  className="masterCard-Fieldss"
-                >
-                  SAVE PAYMENT
-                </button>
-              </div>
-            ) : (
-              <div></div>
-            )}
-            {masterCardPressed && displayPayment ? (
+            <div className="payment-container">
               <div>
-                {cardHolder}
-                {cardNumber}
+                <input type="radio" value="payment" name="payment" /> IDEAL
               </div>
-            ) : (
-              <div></div>
-            )}
+              <div>
+                <h1>
+                  <FaIdeal />
+                </h1>
+              </div>
+            </div>
+            <div className="payment-container">
+              <div>
+                <input
+                  type="radio"
+                  value="payment"
+                  name="payment"
+                  onClick={handleMasterCard}
+                />
+                MasterCard
+              </div>
+              <div>
+                <h1>
+                  <FaCcMastercard />
+                </h1>
+              </div>
+            </div>
+            <div className="payment-container">
+              <div>
+                <input type="radio" value="payment" name="payment" /> Visa
+              </div>
+              <div>
+                <h1>
+                  <FaCcVisa />
+                </h1>
+              </div>
+            </div>
+            <div className="payment-container">
+              <div>
+                <input type="radio" value="payment" name="payment" /> PayPal
+              </div>
+              <div>
+                <h1>
+                  <FaCcPaypal />
+                </h1>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="payment-container">
-        <div>
-          <input type="radio" value="payment" name="payment" /> Visa
-        </div>
-        <div>
-          <h1>
-            <FaCcVisa />
-          </h1>
-        </div>
-      </div>
-      <div className="payment-container">
-        <div>
-          <input type="radio" value="payment" name="payment" /> PayPal
-        </div>
-        <div>
-          <h1>
-            <FaCcPaypal />
-          </h1>
-        </div>
+        ) : (
+          <div></div>
+        )}
+        {masterCardPressed && !displayPayment ? (
+          <div className="payment-container">
+            <div className="masterCard-Payment">
+              <div className="masterCard-Fields">
+                <label>CARD HOLDER</label>
+                <input
+                  type="text"
+                  name="cardHolder"
+                  onChange={handleCardHolder}
+                />
+              </div>
+              <div className="masterCard-Fields">
+                <label>CARD NUMBER*</label>
+                <input
+                  type="text"
+                  name="cardNumber"
+                  onChange={handleCardNumber}
+                />
+              </div>
+              <button
+                onClick={() => {
+                  props.handlePayment();
+                  handleLocalPayment();
+                }}
+                className="masterCard-Fieldss"
+              >
+                SAVE PAYMENT
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );
